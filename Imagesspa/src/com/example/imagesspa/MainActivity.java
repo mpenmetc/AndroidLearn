@@ -16,7 +16,17 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	
 	Button int1;
 	Button int2;
+	Button int3;
 	TextView textOut;
+	private OnClickListener mytest = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			textOut.setText("Yes" + v.getId());
+			
+		}
+	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,6 +38,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		textOut = (TextView)findViewById(R.id.magic);
 		int1 = (Button)findViewById(R.id.button2);
 		int2 = (Button)findViewById(R.id.button3);
+		int3 = (Button)findViewById(R.id.button4);
+		int3.setOnClickListener(mytest);
 		int1.setOnClickListener(this);
 		int2.setOnClickListener(this);
 		 	butpress.setOnClickListener(new View.OnClickListener() {
